@@ -1,0 +1,143 @@
+<div class="container-fluid">
+  <div class="container pt-5 pb-3">
+    <div class="section-title position-relative text-center">
+      <div *ngIf="!isAfter; else elseBlock">
+        <h1 class="font-secondary display-4">Đồng hồ đếm ngược</h1>
+      </div>
+      <ng-template #elseBlock
+      ><h1 class="font-secondary display-4">Kỷ niệm ngày cưới</h1></ng-template
+      >
+
+      <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">08/03/2025</h6>
+      <i class="far fa-heart text-dark"></i>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center countdown-container" *ngIf="!isAfter">
+        <div class="box">
+          <div>{{ days }}</div>
+          <span>Ngày</span>
+        </div>
+        <div class="box">
+          <div>{{ hours }}</div>
+          <span>Giờ</span>
+        </div>
+        <div class="box">
+          <div>{{ minutes }}</div>
+          <span>Phút</span>
+        </div>
+        <div class="box">
+          <div>{{ seconds }}</div>
+          <span>Giây</span>
+        </div>
+      </div>
+      <div class="col-md-6 text-center countdown-container" *ngIf="isAfter">
+        <div class="box">
+          <div>{{ daysDifference }}</div>
+          <span>Ngày</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid py-5" id="event">
+  <div class="container py-5">
+    <div class="section-title position-relative text-center">
+      <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">Thời gian</h6>
+      <h1 class="font-secondary display-4">Sự Kiện Cưới</h1>
+      <i class="far fa-heart text-dark"></i>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6 text-center">
+        <h5 class="font-weight-normal text-muted mb-3 pb-3">
+          Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến
+          đi đáng giá.
+        </h5>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card text-center p-3 border-0 shadow-sm">
+          <div class="position-relative">
+            <img class="card-img-top rounded" src="../../../../assets/img/hanhnhung/events/1.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">LỄ CƯỚI</h5>
+            <p class="text-muted"><i class="fa fa-map-marker-alt"></i> Nhà thờ Nấp - Yên Đồng - Ý Yên - Nam Định</p>
+            <p><i class="fa fa-clock"></i> 09:00 08/03/2025</p>
+            <div class="button-container">
+              <button class="btn btn-outline-primary" (click)="onAddEvent('le_cuoi')">
+                <i class="fa fa-calendar-plus"></i> Thêm vào lịch
+              </button>
+              <button class="btn btn-danger" (click)="onOpenMap('le_cuoi')">
+                <i class="fa fa-map-marker-alt"></i> Xem bản đồ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center p-3 border-0 shadow-sm">
+          <div class="position-relative">
+            <img class="card-img-top rounded" src="../../../../assets/img/hanhnhung/events/2.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">LỄ ĂN HỎI</h5>
+            <p class="text-muted"><i class="fa fa-map-marker-alt"></i> Nhà Gái - Nấp - Yên Đồng - Ý Yên - Nam Định</p>
+            <p><i class="fa fa-clock"></i> 12:30 08/03/2025</p>
+            <div class="button-container">
+              <button class="btn btn-outline-primary" (click)="onAddEvent('le_an_hoi')">
+                <i class="fa fa-calendar-plus"></i> Thêm vào lịch
+              </button>
+              <button class="btn btn-danger" (click)="onOpenMap('female')">
+                <i class="fa fa-map-marker-alt"></i> Xem bản đồ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center p-3 border-0 shadow-sm">
+          <div class="position-relative">
+            <img class="card-img-top rounded" src="../../../../assets/img/hanhnhung/events/3.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">LỄ VU QUY</h5>
+            <p class="text-muted"><i class="fa fa-map-marker-alt"></i> Nhà Gái - Nấp - Yên Đồng - Ý Yên - Nam Định</p>
+            <p><i class="fa fa-clock"></i> 12:00 09/03/2025</p>
+            <div class="button-container">
+              <button class="btn btn-outline-primary" (click)="onAddEvent('le_vu_quy_male')">
+                <i class="fa fa-calendar-plus"></i> Thêm vào lịch
+              </button>
+              <button class="btn btn-danger" (click)="onOpenMap('female')">
+                <i class="fa fa-map-marker-alt"></i> Xem bản đồ
+              </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="card text-center p-3 border-0 shadow-sm">
+          <div class="position-relative">
+            <img class="card-img-top rounded" src="../../../../assets/img/hanhnhung/events/4.jpg" alt="" />
+          </div>
+          <div class="card-body">
+            <h5 class="card-title font-weight-bold">LỄ VU QUY</h5>
+            <p class="text-muted"><i class="fa fa-map-marker-alt"></i> Nhà Trai - Xóm 17 - An Trung - Yên Đồng - Ý Yên - Nam Định</p>
+            <p><i class="fa fa-clock"></i> 13:00 09/03/2025</p>
+            <div class="button-container">
+              <button class="btn btn-outline-primary" (click)="onAddEvent('le_vu_quy_female')">
+                <i class="fa fa-calendar-plus"></i> Thêm vào lịch
+              </button>
+              <button class="btn btn-danger" (click)="onOpenMap('male')">
+                <i class="fa fa-map-marker-alt"></i> Xem bản đồ
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

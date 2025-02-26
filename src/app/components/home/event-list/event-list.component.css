@@ -1,0 +1,63 @@
+.row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.img-fluid {
+  width: 100%;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Canh giữa các nút */
+  align-items: center;
+  flex-wrap: wrap; /* Đảm bảo không bị tràn trên màn hình nhỏ */
+  gap: 10px; /* Tạo khoảng cách giữa hai nút */
+}
+
+.btn {
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px; /* Đảm bảo các nút có kích thước đều nhau */
+}
+
+
+.border-right {
+  border-right: 2px solid #007bff;
+}
+.countdown-container {
+  display: flex;
+  flex-direction: row;
+  flex-basis: content;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  text-align: center;
+  font-size: 25px;
+  padding: 10px 0px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.countdown-container .box {
+  margin: 15px;
+  padding: 10px;
+  border-radius: 50%;
+  border: 1px solid #E374A9;
+  width: 100px;
+  height: 100px;
+  background-color: #E374A9;
+  color: #ffffff;
+}

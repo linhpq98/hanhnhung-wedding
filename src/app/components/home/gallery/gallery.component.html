@@ -1,0 +1,41 @@
+<div class="container-fluid py-5">
+    <div class="container pt-5 pb-3">
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h5 class="font-weight-normal text-muted mb-3 pb-3">
+                    "Chỉ mất 3 giây để nói lời yêu, nhưng phải mất cả cuộc đời để chứng minh điều đó"
+                </h5>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid bg-gallery" id="gallery" style="padding: 80px 0; margin: 90px 0">
+<!--    <div class="section-title position-relative text-center">-->
+<!--        <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">Ảnh Cưới</h6>-->
+<!--        <h1 class="font-secondary display-4 text-white">Album Ảnh Cưới</h1>-->
+<!--        <i class="far fa-heart text-white"></i>-->
+<!--    </div>-->
+<!--    <div class="container mb-5 text-center">-->
+<!--        <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="/pt-album">-->
+<!--            <i class="fa fa-camera pr-1"></i> Album Phú Thọ-->
+<!--        </a>-->
+
+<!--        <a class="btn btn-primary font-weight-bold m-2 px-2" type="button" href="https://photos.app.goo.gl/MCApMz5weAfQG7nd6">-->
+<!--            <i class="fa fa-camera pr-1"></i> Album Hà Tĩnh-->
+<!--        </a>-->
+<!--    </div>-->
+
+    <owl-carousel-o [options]="customOptions" class="gallery-carousel">
+        <ng-container *ngFor="let slide of albumData">
+            <ng-template carouselSlide [id]="slide.id">
+                <div class="gallery-item">
+                    <img [src]="slide.url" [alt]="slide.id" [title]="slide.id" loading="lazy" />
+                    <a [href]="slide.url" data-lightbox="gallery">
+                        <i class="fa fa-2x fa-plus text-white"></i>
+                    </a>
+                </div>
+            </ng-template>
+        </ng-container>
+    </owl-carousel-o>
+</div>

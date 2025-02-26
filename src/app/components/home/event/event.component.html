@@ -1,0 +1,111 @@
+<div class="container-fluid">
+    <div class="container pt-5 pb-3">
+        <div class="section-title position-relative text-center">
+            <div *ngIf="!isAfter; else elseBlock">
+                <h1 class="font-secondary display-4">Đồng hồ đếm ngược</h1>
+            </div>
+            <ng-template #elseBlock
+                ><h1 class="font-secondary display-4">Kỷ niệm ngày cưới</h1></ng-template
+            >
+
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">08/03/2025</h6>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center countdown-container" *ngIf="!isAfter">
+                <div class="box">
+                    <div>{{ days }}</div>
+                    <span>Ngày</span>
+                </div>
+                <div class="box">
+                    <div>{{ hours }}</div>
+                    <span>Giờ</span>
+                </div>
+                <div class="box">
+                    <div>{{ minutes }}</div>
+                    <span>Phút</span>
+                </div>
+                <div class="box">
+                    <div>{{ seconds }}</div>
+                    <span>Giây</span>
+                </div>
+            </div>
+            <div class="col-md-6 text-center countdown-container" *ngIf="isAfter">
+                <div class="box">
+                    <div>{{ daysDifference }}</div>
+                    <span>Ngày</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="container-fluid py-5" id="event">
+    <div class="container py-5">
+        <div class="section-title position-relative text-center">
+            <h6 class="text-uppercase text-primary mb-3" style="letter-spacing: 3px">Thời gian</h6>
+            <h1 class="font-secondary display-4">Sự Kiện Cưới</h1>
+            <i class="far fa-heart text-dark"></i>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6 text-center">
+                <h5 class="font-weight-normal text-muted mb-3 pb-3">
+                    Tình yêu không làm cho thế giới quay tròn. Tình yêu là những gì làm cho chuyến
+                    đi đáng giá.
+                </h5>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 border-right border-primary">
+                <div class="text-center text-md-right mr-md-3 mb-4 mb-md-0">
+                    <img class="img-fluid mb-4" src="../../../../assets/img/hanhnhung/event/1.jpg" alt="" />
+                    <h4 class="mb-3">TIỆC CƯỚI NHÀ TRAI</h4>
+                    <p class="mb-2">Tư gia gia đình Ông Chung</p>
+                    <p class="mb-2">Xóm 17 - Yên Đồng - Ý Yên - Nam Định</p>
+                    <p class="mb-2">08-09/03/2025 Dương Lịch</p>
+                    <p class="mb-2">09-10/02/2025 Âm Lịch</p>
+
+                    <button
+                        class="btn btn-primary font-weight-bold mt-3 mr-2 px-2"
+                        type="button"
+                        (click)="onAddEvent('male')"
+                    >
+                        <i class="fa fa-calendar-plus pr-1"></i> Thêm vào lịch
+                    </button>
+                    <button
+                        class="btn btn-primary font-weight-bold mt-3 px-2"
+                        type="button"
+                        (click)="onOpenMap('male')"
+                    >
+                        <i class="fa fa-map-marker-alt pr-1"></i> Mở bản đồ
+                    </button>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center text-md-left ml-md-3">
+                    <img class="img-fluid mb-4" src="../../../../assets/img/hanhnhung/event/2.jpg" alt="" />
+                    <h4 class="mb-3">TIỆC CƯỚI NHÀ GÁI</h4>
+                    <p class="mb-2">Tư gia gia đình Ông Khoái</p>
+                    <p class="mb-2">Xóm Nấp - Yên Đồng - Ý Yên - Nam Định</p>
+                    <p class="mb-2">08-09/03/2025 Dương Lịch</p>
+                    <p class="mb-2">09-10/02/2025 Âm Lịch</p>
+
+                    <button
+                        class="btn btn-primary font-weight-bold mt-3 px-2 mr-2"
+                        type="button"
+                        (click)="onOpenMap('female')"
+                    >
+                        Mở bản đồ <i class="fa fa-map-marker-alt pl-1"></i>
+                    </button>
+                    <button
+                        class="btn btn-primary font-weight-bold mt-3 px-2"
+                        type="button"
+                        (click)="onAddEvent('female')"
+                    >
+                        Thêm vào lịch <i class="fa fa-calendar-plus pl-1"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

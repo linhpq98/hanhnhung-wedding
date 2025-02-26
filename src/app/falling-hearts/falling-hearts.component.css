@@ -1,0 +1,58 @@
+.heart-container {
+  position: fixed;
+  top: -10vh; /* Cho phép trái tim xuất phát từ trên */
+  left: 0;
+  width: 100%;
+  height: 110vh; /* Đủ không gian cho animation */
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+
+.heart {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background-color: #ff4d6d;
+  transform: rotate(-45deg);
+  animation: fall linear infinite, sway 3s ease-in-out infinite;
+  will-change: transform, opacity;
+
+}
+
+.heart::before,
+.heart::after {
+  content: '';
+  width: 15px;
+  height: 15px;
+  background-color: #ff4d6d;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.heart::before {
+  top: -7.5px;
+  left: 0;
+}
+
+.heart::after {
+  top: 0;
+  left: 7.5px;
+}
+
+@keyframes fall {
+  from {
+    transform: translateY(-150vh) rotate(-45deg); /* Xuất phát từ rất cao */
+    opacity: 0; /* Ẩn ban đầu */
+  }
+  10% {
+    opacity: 1; /* Hiện dần */
+  }
+  to {
+    transform: translateY(100vh) rotate(-45deg);
+    opacity: 1;
+  }
+}
+
+
